@@ -7,6 +7,8 @@ import android.text.TextUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.srikar.lulu.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
@@ -43,14 +45,14 @@ class RegisterActivity : AppCompatActivity() {
                 )
                     .addOnSuccessListener {
 
-                        //user.uname = binding2.username.text?.toString()
-                        //user.accno = binding2.accNumber.text?.toString()
-                        //user.email = binding2.mail.text?.toString()
-                        //user.pass = binding2.password.text?.toString()
-                        //user.repass = binding2.repassword.text?.toString()
-                        //user.mobile = binding2.mobileNumber.text?.toString()
+                        user.uname = binding2.username.text?.toString()
+                        user.accno = binding2.accNumber.text?.toString()
+                        user.email = binding2.mail.text?.toString()
+                        user.pass = binding2.password.text?.toString()
+                        user.repass = binding2.repassword.text?.toString()
+                        user.mobile = binding2.mobileNumber.text?.toString()
 
-                        //Firebase.firestore.collection("User").document(FirebaseAuth.getInstance().currentUser!!.uid).set(user)
+                        Firebase.firestore.collection("User").document(FirebaseAuth.getInstance().currentUser!!.uid).set(user)
 
                         FirebaseAuth.getInstance().currentUser!!.sendEmailVerification()
                             .addOnSuccessListener {
