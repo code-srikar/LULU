@@ -4,6 +4,160 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CAEDF7"
     tools:context=".DashboardActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        android:padding="6dp"
+        android:paddingStart="13dp"
+        android:text="LULU Bank"
+        android:textColor="#6FEA6B"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/depositCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="0.17000002">
+
+        <ImageView
+            android:id="@+id/depositImag"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="20dp"
+            android:padding="12dp"
+            android:src="@drawable/deposit" />
+
+        <TextView
+            android:id="@+id/depositTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="12dp"
+            android:text="Deposit"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/investCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_marginTop="198dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/depositCard"
+        app:layout_constraintVertical_bias="0.04000002">
+
+        <ImageView
+            android:id="@+id/investImag"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="20dp"
+            android:padding="12dp"
+            android:src="@drawable/investment" />
+
+        <TextView
+            android:id="@+id/investTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="12dp"
+            android:text="Investment"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/accountCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/investCard"
+        app:layout_constraintVertical_bias="0.04000002">
+
+        <ImageView
+            android:id="@+id/accountImag"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="20dp"
+            android:padding="12dp"
+            android:src="@drawable/prof" />
+
+        <TextView
+            android:id="@+id/accountTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="12dp"
+            android:text="Accounts"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/serviceCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountCard"
+        app:layout_constraintVertical_bias="0.04000002">
+
+        <ImageView
+            android:id="@+id/serviceImag"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="20dp"
+            android:padding="12dp"
+            android:src="@drawable/support" />
+
+        <TextView
+            android:id="@+id/serviceTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="12dp"
+            android:text="Service"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

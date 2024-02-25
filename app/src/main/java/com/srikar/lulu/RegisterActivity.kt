@@ -6,9 +6,7 @@ import android.text.Html
 import android.text.TextUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.firestore
 import com.srikar.lulu.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
@@ -45,24 +43,29 @@ class RegisterActivity : AppCompatActivity() {
                 )
                     .addOnSuccessListener {
 
-                        user.uname = binding2.username.text?.toString()
-                        user.accno = binding2.accNumber.text?.toString()
-                        user.email = binding2.mail.text?.toString()
-                        user.pass = binding2.password.text?.toString()
-                        user.repass = binding2.repassword.text?.toString()
-                        user.mobile = binding2.mobileNumber.text?.toString()
+                        //user.uname = binding2.username.text?.toString()
+                        //user.accno = binding2.accNumber.text?.toString()
+                        //user.email = binding2.mail.text?.toString()
+                        //user.pass = binding2.password.text?.toString()
+                        //user.repass = binding2.repassword.text?.toString()
+                        //user.mobile = binding2.mobileNumber.text?.toString()
 
-                        Firebase.firestore.collection("User").document(FirebaseAuth.getInstance().currentUser!!.uid).set(user)
+                        //Firebase.firestore.collection("User").document(FirebaseAuth.getInstance().currentUser!!.uid).set(user)
 
-                        Toast.makeText(this, "Registered Successfully", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this, LoginActivity::class.java))
-                        finish()
+                        FirebaseAuth.getInstance().currentUser!!.sendEmailVerification()
+                            .addOnSuccessListener {
 
-                        binding2.accNumber.text.clear()
-                        binding2.mail.text.clear()
-                        binding2.password.text.clear()
-                        binding2.repassword.text.clear()
-                        binding2.mobileNumber.text.clear()
+                                binding2.accNumber.text.clear()
+                                binding2.mail.text.clear()
+                                binding2.password.text.clear()
+                                binding2.repassword.text.clear()
+                                binding2.mobileNumber.text.clear()
+
+                                Toast.makeText(this, "Verification mail has been sent", Toast.LENGTH_LONG).show()
+                                startActivity(Intent(this, LoginActivity::class.java))
+                                finish()
+
+                            }
                     }
                     .addOnFailureListener {
                         Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()

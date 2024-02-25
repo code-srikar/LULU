@@ -18,10 +18,25 @@ class LoginActivity : AppCompatActivity() {
         binding1 = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding1.root)
 
+        val forgotText = "<font color = #4184F3>Forgot Password?</font>"
+
         val text =
             "<font color = #000000>Create a new Account?</font> <font color = #4184F3>Click here</font>"
 
         binding1.newUser.text = Html.fromHtml(text)
+        binding1.forgot.text = Html.fromHtml(forgotText)
+
+        binding1.forgot.setOnClickListener {
+
+            if (!TextUtils.isEmpty(binding1.mail.text)) {
+                FirebaseAuth.getInstance().sendPasswordResetEmail(binding1.mail.text.toString())
+                Toast.makeText(this,"Password Reset mail has been sent",Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this,"Enter your email",Toast.LENGTH_SHORT).show()
+            }
+
+        }
 
         binding1.newUser.setOnClickListener {
 
