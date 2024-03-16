@@ -11,10 +11,9 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:background="@color/white"
         android:padding="6dp"
-        android:paddingStart="13dp"
+        android:paddingStart="20dp"
         android:text="LULU Bank"
         android:textColor="#6FEA6B"
         android:textSize="35sp"
@@ -66,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/depositCard"
+        android:id="@+id/transactionsCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
@@ -79,20 +78,20 @@
         app:layout_constraintVertical_bias="0.17000002">
 
         <ImageView
-            android:id="@+id/depositImag"
+            android:id="@+id/transactionsImag"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="20dp"
             android:padding="12dp"
-            android:src="@drawable/deposit" />
+            android:src="@drawable/transfer" />
 
         <TextView
-            android:id="@+id/depositTitle"
+            android:id="@+id/transactionTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="12dp"
-            android:text="Deposit"
+            android:text="Transactions"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -110,7 +109,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/depositCard"
+        app:layout_constraintTop_toBottomOf="@+id/transactionsCard"
         app:layout_constraintVertical_bias="0.04000002">
 
         <ImageView
@@ -152,7 +151,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="20dp"
-            android:padding="12dp"
+            android:padding="8dp"
             android:src="@drawable/prof" />
 
         <TextView

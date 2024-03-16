@@ -8,6 +8,7 @@ class User() {
     var repass:String?=null
     var email:String?=null
     var mobile:String?=null
+    var amount:Number?=null
 
     /*constructor(uname:String?, accno:String?, pass:String?, repass:String?, email:String?, mobile:String?) : this() {
         this.accno = accno

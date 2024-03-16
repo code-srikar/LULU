@@ -51,8 +51,9 @@ class RegisterActivity : AppCompatActivity() {
                         user.pass = binding2.password.text?.toString()
                         user.repass = binding2.repassword.text?.toString()
                         user.mobile = binding2.mobileNumber.text?.toString()
+                        user.amount = 5000
 
-                        Firebase.firestore.collection("User").document(FirebaseAuth.getInstance().currentUser!!.uid).set(user)
+                        Firebase.firestore.collection("User").document(user.email!!.toString()).set(user)
 
                         FirebaseAuth.getInstance().currentUser!!.sendEmailVerification()
                             .addOnSuccessListener {
